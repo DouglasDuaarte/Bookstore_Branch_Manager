@@ -28,9 +28,11 @@ class Livraria():
     def buscarLivros(self):
         titulo = input("Informe o titulo do livro: ")
         for livro in self.livros:
-            if livro.titulo.lower==titulo.lower:
+            if livro.titulo.lower()==titulo.lower():
                 print(livro)
-                break   
+            else:
+                print("Titulo não encontrado")
+                   
     
     def buscarValor(self):
         valor = float(input("Informe o valor do livro: "))
@@ -42,9 +44,12 @@ class Livraria():
     def buscarArea(self):
         area = input("Informe a area do livro: ")
         for livro in self.livros:
-            if livro.area.lower==area.lower:
+            if livro.area.lower()==area.lower():
                 print(livro)
                 break
+            else:
+                print("Nenhum livro encontrado nessa área")
+                
     
     
     def buscarValorEstoqueMaior(self):

@@ -30,8 +30,7 @@ class Livraria():
         for livro in self.livros:
             if livro.titulo.lower()==titulo.lower():
                 print(livro)
-            else:
-                print("Titulo não encontrado")
+                break
                    
     
     def buscarValor(self):
@@ -40,6 +39,8 @@ class Livraria():
             if livro.valor<valor:
                 print(livro)
                 break
+            else:
+                print("Nenhum livro encontrado com esse titulo")
 
     def buscarArea(self):
         area = input("Informe a area do livro: ")
@@ -58,7 +59,45 @@ class Livraria():
             valortotal = livro.valor * livro.quantidadeEstoque
             if valortotal > valor:
                 print(livro)
-                break
+
+
+# V2.1 08/04/2024 add new function (8) 
+
+    def carregarLivrosEstoque (self):
+        try:
+            with open ("estoque_livros.txt", "r") as arquivo: #with open ele abre e fecha automaticamente e o AS é como se fosse um apelido para o programa .txt
+                for linha in arquivo:
+                    dados = linha.split(",")
+                    if len(dados)!=7:
+                        print(f"Formato inválido na linha: {linha}") #tratamento caso o tenha entradado dado a mais. sinaliza a linha errda
+                    else:
+
+                        codigo = int(dados[0])
+                        titulo = (dados[1])
+                        ano = int(dados[2])
+                        area = (dados[3])
+                        editora = (dados[4])
+                        valor = float(dados[5].replace("R$", ""))
+                        quantidadeEstoque = int(dados[6])
+
+                        livro = Livros(titulo, codigo, editora, area, ano, valor, quantidadeEstoque)
+                        self.livros.append(livro)
+
+                        print("Livros carregados")
+
+                
+        except FileNotFoundError:
+            print("Arquivo 'estoque_livros.txt' não encontrado.")
+        except Exception as e:
+            print(f"Ocorreu um erro ao carregar os livros: {e}")
+
+
+
+
+
+
+
+
 
 #add Menu requirements 6 
 if __name__ == "__main__":
@@ -71,6 +110,7 @@ if __name__ == "__main__":
         print("5. Buscar Livro por Área")
         print("6. Buscar Livro por Valor Total em Estoque Maior que o Indicado")
         print("7. Sair")
+        print("8. Carregar Livros do Estoque") #new function add
         opcao = int(input("Escolha uma opção: "))
         if opcao == 1:
             livraria.cadastroLivros()
@@ -86,5 +126,7 @@ if __name__ == "__main__":
             livraria.buscarValorEstoqueMaior()
         elif opcao == 7:
             break
+        elif opção == 8:
+            livraria.carregarLivrosEstoque()
         else:
             print("Opção inválida!")

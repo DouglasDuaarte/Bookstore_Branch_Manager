@@ -61,7 +61,7 @@ class Livraria():
                 print(livro)
 
 
-# V2.1 08/04/2024 add new function (8) 
+#V2.1 08/04/2024 add new function (8) 
 
     def carregarLivrosEstoque (self):
         try:
@@ -93,13 +93,22 @@ class Livraria():
 
 
 
+#V2.2 20/04/2024 add new function (9) 
 
-
-
+    def atualizarArquivoEstoque(self):
+        try:
+            with open("estoque_livros.txt", "w", encoding="utf-8") as arquivo: #Abre o arquivo no modo escrita.
+                for livro in self.livros:
+                    linha = f"{livro.codigo},{livro.titulo},{livro.ano},{livro.area},{livro.editora},R${livro.valor:.2f},{livro.quantidadeEstoque}\n"
+                    arquivo.write(linha) #Escreve cada livro no arquivo.
+            print("Arquivo de estoque atualizado com sucesso!")
+        except Exception as e:
+            print(f"Ocorreu um erro ao atualizar o arquivo: {e}")
 
 
 
 #add Menu requirements 6 
+#att with news functions 8, 9 e 0!
 if __name__ == "__main__":
     livraria = Livraria()
     while True:
@@ -110,8 +119,11 @@ if __name__ == "__main__":
         print("5. Buscar Livro por Área")
         print("6. Buscar Livro por Valor Total em Estoque Maior que o Indicado")
         print("7. Sair")
-        print("8. Carregar Livros do Estoque") #new function add
+        print("8. Carregar Livros do Estoque")
+        print("9. Atualizar Arquivo de Estoque") 
+        print("0. Encerrar Atividades")
         opcao = int(input("Escolha uma opção: "))
+        
         if opcao == 1:
             livraria.cadastroLivros()
         elif opcao == 2:
@@ -124,9 +136,15 @@ if __name__ == "__main__":
             livraria.buscarArea()
         elif opcao == 6:
             livraria.buscarValorEstoqueMaior()
-        elif opcao == 7:
-            break
-        elif opção == 8:
+        elif opcao == 8:
             livraria.carregarLivrosEstoque()
+        elif opcao == 9:
+            livraria.atualizarArquivoEstoque()
+        elif opcao == 0:
+            salvar = input("Deseja atualizar o arquivo de estoque antes de encerrar? (s/n): ").strip().lower()
+            if salvar == "s":
+                livraria.atualizarArquivoEstoque()
+            print("Encerrando o sistema...")
+            break
         else:
             print("Opção inválida!")

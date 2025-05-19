@@ -1,0 +1,6 @@
+#FL04, Praia de Belas, Avenida Padre Cacique 2000, 3210-5678
+2001,A Revolução dos Bichos,1945,sátira política,Companhia das Letras,R$31.80,22
+2002,Capitães da Areia,1937,drama,Record,R$28.50,14
+2003,O Nome do Vento,2007,fantasia,Arqueiro,R$55.00,10
+2004,Morte Súbita,2012,ficção,J.K. Rowling,R$49.90,17
+2005,Harry Potter e a Pedra Filosofal,1997,fantasia,Rocco,R$44.00,35

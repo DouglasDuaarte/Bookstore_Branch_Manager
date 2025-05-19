@@ -1,0 +1,14 @@
+3426,compiladores,2012,computação,pearson,R$135.50,50
+2631,sistemas digitais,2017,computação,liber,R$99.90,30
+9680,senhor dos aneis: a sociedade do anel,2005,fantasia,harper,R$35.00,120
+9681,senhor dos aneis: as duas torres,2005,fantasia,harper,R$35.00,20
+1001,1984,1949,ficção científica,Companhia das Letras,R$42.50,15
+1002,O Pequeno Príncipe,1943,infantil,Agir,R$29.90,30
+1003,O Hobbit,1937,fantasia,HarperCollins,R$39.99,25
+1004,Dom Casmurro,1899,romance,Editora Ática,R$24.00,18
+1005,Orgulho e Preconceito,1813,romance,Martin Claret,R$34.90,12
+2001,A Revolução dos Bichos,1945,sátira política,Companhia das Letras,R$31.80,22
+2002,Capitães da Areia,1937,drama,Record,R$28.50,14
+2003,O Nome do Vento,2007,fantasia,Arqueiro,R$55.00,10
+2004,Morte Súbita,2012,ficção,J.K. Rowling,R$49.90,17
+2005,Harry Potter e a Pedra Filosofal,1997,fantasia,Rocco,R$44.00,35

@@ -1,0 +1,6 @@
+#FL03, Bairro Novo, Rua das Flores 123, 4002-8922
+1001,1984,1949,ficção científica,Companhia das Letras,R$42.50,15
+1002,O Pequeno Príncipe,1943,infantil,Agir,R$29.90,30
+1003,O Hobbit,1937,fantasia,HarperCollins,R$39.99,25
+1004,Dom Casmurro,1899,romance,Editora Ática,R$24.00,18
+1005,Orgulho e Preconceito,1813,romance,Martin Claret,R$34.90,12

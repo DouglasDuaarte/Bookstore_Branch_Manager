@@ -11,7 +11,7 @@ class Livraria():
             Livros("O Hobbit", 2, "HarperCollins", "Fantasia", 1937, 39.90, 15),
             Livros("Jogos Vorazes", 3, "Rocco", "Ficção Científica", 2008, 29.90, 20)
         ]
-        self.filiais = {} #guardo minhas filias num dicionario.
+        self.filiais = {} #guardo minhas filiais num dicionario. depois acesso por chave 
 
         
 #add methods to Livraria versão antiga
@@ -77,7 +77,7 @@ class Livraria():
             encontrados = []
 
             for livro in self.filiais[codigo].estoque_filial:
-                if livro.valor == valor:
+                if livro.valor <= valor:
                     encontrados.append(livro)
 
             if encontrados:
@@ -188,7 +188,7 @@ class Livraria():
                         quantidadeEstoque = int(dados[6])
 
                         livro = Livros(titulo, codigo, editora, area, ano, valor, quantidadeEstoque)
-                        self.livros.append(livro)
+                        self.estoque_geral.append(livro)
 
                         print("Livros carregados")
 
@@ -375,6 +375,39 @@ class Livraria():
         print(f"\nValor total do estoque: R${valor_total:.2f}")
 
 #v3.4
+
+#v3.5 add function search for cod
+     
+    def buscarPorCodigo (self):
+        codigo_livro = int(input("Informe o codido do livro que deseja verificar: ").strip())
+
+        encontrado = False
+        total_valor = 0
+        resultado_filiais =[]
+
+        for cod_filial, filial in self.filiais.items():
+            for livro in filial.estoque_livro:
+                if livro.codigo == codigo_livro:
+                    if not encontrado:
+                        encontrado = True
+                        print(f"___Encontrados na busca___\n")
+                        print(f"\nCod#{livro.codigo}")
+                        print(f"Título/Editora: {livro.titulo}/{livro.editora}")
+                        print(f"Categoria: {livro.area}")
+                        print(f"Ano: {livro.ano}")
+                    valor_total_filial = livro.valor * livro.quantidadeEstoque
+                    total_valor += valor_total_filial 
+                    resultado_filiais.append(f"Valor: R$ {livro.valor:.2f} >>> Filial {filial.nome}, estoque: {livro.quantidadeEstoque} unidades")
+        
+        if encontrado:
+            for linha in resultado_filiais:
+                print(linha)
+            print(f"Valor total em estoque: R$ {total_valor:.2f}")
+
+        else:
+             print("\nLivro não encontrado em nenhuma filial.")
+
+
 
 #trocando por swich-case para melhor visualização do menu
 if __name__ == "__main__":

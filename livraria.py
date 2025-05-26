@@ -386,7 +386,7 @@ class Livraria():
         resultado_filiais =[]
 
         for cod_filial, filial in self.filiais.items():
-            for livro in filial.estoque_livro:
+            for livro in filial.estoque_filial:
                 if livro.codigo == codigo_livro:
                     if not encontrado:
                         encontrado = True
@@ -426,6 +426,7 @@ if __name__ == "__main__":
         print("10. Salvar Estoque Geral em Arquivo")
         print("11. Carregar Estoques das Filiais de Arquivos")
         print("12. Salvar Estoque de uma Filial em Arquivo")
+        print("13. Buscar por codigo, entre as filiais")
         print("0. Encerrar Sistema")
 
         try:
@@ -460,6 +461,8 @@ if __name__ == "__main__":
             case 12:
                 codigo = int(input("Informe o código da filial para salvar o estoque: "))
                 livraria.salvarArquivosEstoqueFilial(codigo)
+            case 13:
+                livraria.buscarPorCodigo()
             case 0:
                 salvar = input("Deseja atualizar o arquivo de estoque antes de encerrar? (s/n): ").strip().lower()
                 if salvar == "s":

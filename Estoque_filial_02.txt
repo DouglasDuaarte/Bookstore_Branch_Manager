@@ -1,3 +1,5 @@
 #FL02, Centro, Andradas 1312, 3020-2253
 9680,senhor dos aneis: a sociedade do anel,2005,fantasia,harper,R$35.00,20
 9681,senhor dos aneis: as duas torres,2005,fantasia,harper,R$35.00,20
+1004,Dom Casmurro,1899,romance,Editora Ática,R$28.00,25
+1005,Orgulho e Preconceito,1813,romance,Martin Claret,R$34.00,15

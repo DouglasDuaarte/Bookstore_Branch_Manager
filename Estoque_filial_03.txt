@@ -4,3 +4,5 @@
 1003,O Hobbit,1937,fantasia,HarperCollins,R$39.99,25
 1004,Dom Casmurro,1899,romance,Editora Ática,R$24.00,18
 1005,Orgulho e Preconceito,1813,romance,Martin Claret,R$34.90,12
+2004,Morte Súbita,2012,ficção,J.K. Rowling,R$55.00,20
+2005,Harry Potter e a Pedra Filosofal,1997,fantasia,Rocco,R$32.00,60
